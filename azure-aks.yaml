@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-python-deployment
+  name: farosolutions
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: my-python-app
+      app: farosolutions-app
   template:
     metadata:
       labels:
-        app: my-python-app
+        app: farosolutions-app
     spec:
       containers:
-      - name: mypythondockerrepo
-        image: myacrrepo421.azurecr.io/akannan1087/mypythondockerrepo:#{Build.BuildId}#
+      - name: faro-application
+        image: myacrrepo421.azurecr.io/Ooffuss1453/faro-application:#{Build.BuildId}#
         ports:
         - containerPort: 5000
 # service type loadbalancer       
@@ -22,10 +22,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-python-app-svc
+  name: farosolutions-app-svc
 spec:
   selector:
-    app: my-python-app
+    app: farosolutions-app
   ports:
     - protocol: TCP
       port: 5000
