@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: farosolutions
+  name: faro-application
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: farosolutions-app
+      app: faro-application
   template:
     metadata:
       labels:
-        app: farosolutions-app
+        app: faro-application
     spec:
       containers:
       - name: faro-application
