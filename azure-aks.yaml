@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: faro-application
-        image: faroprodregistry.azurecr.io/Ooffuss1453/faro-application:#{Build.BuildId}
+        image: faroprodregistry.azurecr.io/Ooffuss1453/faro-application
         ports:
         - containerPort: 5000
 # service type loadbalancer       
